@@ -1,0 +1,132 @@
+:root{
+  --bg:#081021;
+  --star:#ffffff;
+  --heart:#ff445f;
+  --halo:#ff3c7a;
+  --bubble-stroke: rgba(255,255,255,0.12);
+  font-family: Inter, system-ui, -apple-system, "Poppins", "Helvetica Neue", Arial;
+}
+
+/* page */
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#061126 0%, #081021 70%);overflow:hidden;color:#fff}
+.stage{position:relative;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center}
+
+/* stars background */
+.stage::before{
+  content:"";
+  position:absolute;inset:-20%;
+  background-image:
+    radial-gradient(circle, var(--star) 1px, transparent 2px),
+    radial-gradient(circle, var(--star) 1px, transparent 2px);
+  background-size:30px 30px, 60px 60px;
+  background-position:0 0, 20px 30px;
+  opacity:0.25;
+  animation: drift 18s linear infinite;
+  z-index:0;
+}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-200px)}}
+
+/* music bar top */
+.music-bar{
+  position:fixed;top:28px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:14px;padding:12px 18px;border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  backdrop-filter: blur(6px);box-shadow:0 6px 20px rgba(0,0,0,0.5);
+  z-index:2000;min-width:360px;max-width:600px;
+}
+.play-btn{
+  width:40px;height:40px;border-radius:10px;border:none;background:linear-gradient(180deg,#ff6ea2,#ff3c7a);
+  color:white;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  box-shadow:0 6px 18px rgba(255,60,122,0.18);
+}
+.meta{flex:1;display:flex;flex-direction:column;gap:6px}
+.title{font-size:14px;font-weight:600}
+.progressWrap{height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;position:relative}
+.progress{height:100%;width:0%;background:linear-gradient(90deg,#ff9fc6,#ff4d93);border-radius:6px;transition:width 0.08s linear}
+.time{font-size:13px;opacity:0.9;min-width:70px;text-align:right}
+
+/* heart and halo */
+.heart-wrap{position:relative;z-index:100;filter:drop-shadow(0 20px 40px rgba(255,68,95,0.12))}
+#halo{transform-origin:center;animation:haloPulse 2000ms infinite ease-in-out}
+@keyframes haloPulse{0%{transform:scale(1);opacity:0.9}50%{transform:scale(1.06);opacity:0.6}100%{transform:scale(1);opacity:0.9}}
+#heartSVG{width:360px;height:330px;cursor:pointer;user-select:none;display:block}
+#heartShape{transition:transform 160ms cubic-bezier(.2,.9,.2,1),filter 260ms}
+#heartSVG.pulse #heartShape{transform:scale(0.98);filter:brightness(1.05)}
+
+/* bubbles container: FIXED so coordinates use viewport */
+.bubbles{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:1600}
+
+/* bubble style */
+.bubble{
+  position:absolute;
+  max-width: 340px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  padding:14px 18px;
+  border-radius:18px;
+  font-size:14px;
+  line-height:1.45;
+  background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border:1px solid var(--bubble-stroke);
+  color:#fff;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.45);
+  opacity:0;
+  transform-origin:center center;
+  z-index:1600;
+  /* center horizontally at left coordinate */
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* tiny heart inside bubble */
+.tiny-heart{
+  width:18px;height:18px;border-radius:50%;
+  background:linear-gradient(90deg,#ffd6ea,#ff6ea2);
+  box-shadow:0 6px 18px rgba(255,77,147,0.18);
+  flex:0 0 18px;
+}
+
+/* bubble text */
+.bubble .txt{
+  display:block;
+  color:#fff;
+  font-size:14px;
+  line-height:1.45;
+  white-space:normal;
+}
+
+/* float animation with slow top fade */
+@keyframes floatUp {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(var(--r0)) scale(0.95);
+    opacity: 0;
+  }
+
+  12% {
+    transform: translateX(-50%) translateY(0) rotate(var(--r0)) scale(1);
+    opacity: 1;
+  }
+
+  55% {
+    transform: translateX(-50%) translateY(-110px) rotate(var(--r1)) scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateX(-50%) translateY(-160px) rotate(var(--r2)) scale(1);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-180px) rotate(var(--r2)) scale(0.98);
+    opacity: 0;
+  }
+}
+
+/* responsive */
+@media (max-width:480px){
+  #heartSVG{width:260px;height:240px}
+  .music-bar{left:12px;transform:none;right:12px;top:18px}
+}

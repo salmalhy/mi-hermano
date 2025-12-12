@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Press Heart — Exact TikTok</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- top music bar -->
+  <div id="musicBar" class="music-bar">
+    <button id="playBtn" class="play-btn" aria-label="Play/Pause">▶</button>
+    <div class="meta">
+      <div class="title">Te dedico esta canción ❤️</div>
+      <div class="progressWrap">
+        <div id="progress" class="progress"></div>
+      </div>
+    </div>
+    <div class="time"><span id="current">0:00</span> / <span id="duration">0:00</span></div>
+  </div>
+
+  <!-- stage with stars -->
+  <div class="stage">
+    <div class="heart-wrap">
+      <svg id="heartSVG" viewBox="0 0 100 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#glow)" id="halo">
+          <path fill="#ff3c7a" opacity="0.45" d="M50 86s-36-22-36-47c0-13 10-23 23-23 7 0 13 3 13 3s6-3 13-3c13 0 23 10 23 23 0 25-36 47-36 47z"/>
+        </g>
+        <path id="heartShape" d="M50 86s-36-22-36-47c0-13 10-23 23-23 7 0 13 3 13 3s6-3 13-3c13 0 23 10 23 23 0 25-36 47-36 47z" fill="#ff445f"/>
+        <path d="M34 30 C 37 25, 52 24, 57 29" fill="none" stroke="#ff9db6" stroke-linecap="round" stroke-width="4" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <!-- bubbles container: fixed so coordinates use viewport -->
+    <div id="bubbles" class="bubbles"></div>
+  </div>
+
+  <!-- audio elements -->
+  <audio id="mainAudio" src="song.mp3" preload="metadata"></audio>
+  <audio id="popSound" src="pop.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
