@@ -1,23 +1,23 @@
 // messages and options
 const frases = [
-  "seeing you smile at the morning change my day, knowing that i am capable of making you smile, even for a short time, makes me feel like you are not lost completely ✨❤️",
-  "you can do it, you know you are one of the strongest people i know, this will pass🏡💖",
-  "thanks for existing in my life, you changed it a lot ❤️",
-  "you made me realize that love existe even in friendships 💫",
-  "anything in the present, it will be all a memory in the future, so never give up 💕",
-  "never forget, people that loves, ready to help you, it's okay to feel unwell, but it's not okay to stay inside refusing getting out, just call for help, and everyone will rush out for you 💘",
-  "i say that a lot, and i will say it again, i am not your bestie, i am more like your psycho ex, so as long as you hate people around you, u'r stuck there with me 🌙",
-  "I am always here for you, no matter what 🚀❤️",
-  "I love yoouu 💕",
-  "be there for the next 80years, cause i can't imagine them without you",
-  "as much as i hate seeing you cry, you look like and angel crying, you look amazing during all your states ✨",
-  "you survived every bad day until now, you’ll survive this one too 💖",
-  "I’m proud of you, even when you’re tired, even when you don’t notice your own progress ⭐",
-  "you make ordinary days feel like memories worth keeping 💕",
-  "you’re not alone, not now, not ever; keep me in your corner always ✨",
-  "I would never ask you to wear a mask for me in order to hide what you’re going through. I love you, no matter what.",
-  "Call or text me anytime you need to talk. I’m always here for you.",
-  "I may not wholly understand everything you are going through, but I will try my best. I’m always here to listen anytime you need to talk.",
+  "Aunque estemos lejos, sigues siendo parte de todo aquí en casa. Nada se siente completo sin ti. ✨❤️",
+  "Puede que no confíes en mí, pero ahora soy diferente. Puedes hablar con tu hermana pequeña, Hatim 🏡💖",
+  "Gracias por estar en mi vida; la has cambiado muchísimo. ❤️",
+  "Extraño tu presencia en casa más de lo que imaginas, pero me alegra que estés construyendo el futuro que deseas.💫",
+  "Lo que hoy duele, mañana será solo un recuerdo. No te rindas. 💕",
+  "Nunca olvides que hay gente que te quiere y está lista para ayudarte. Está bien no estar bien, pero no te encierres. Pide ayuda y todos correrán hacia ti. 💘",
+  "Siempre lo digo y lo repetiré: no soy tu hermana… soy más bien tu ex psicópata, estás atrapada conmigo. 🌙",
+  "Siempre voy a estar aquí para ti, pase lo que pase. 🚀❤️",
+  "Te quiiiiiero muchísimo. 💕",
+  "Quédate conmigo los próximos 80 años, porque no puedo imaginar mi vida sin ti.",
+  "Sé que intentas ser fuerte todo el tiempo, pero también tienes derecho a sentirte solo y débil. Solo no te guardes todo por dentro. ✨",
+  "Has sobrevivido todos tus días difíciles hasta hoy; vas a superar este también. 💖",
+  "Ojalá tuviéramos más contacto.⭐",
+  "Estoy empezando a olvidar cómo eres. Mándame una foto antes de que te confunda con cualquier desconocido.💕",
+  "No estás sola, ni ahora ni nunca. Siempre me tendrás de tu lado. ✨",
+  "Te fuiste cuando yo aún era pequeña, y siento que no me conoces del todo. Ojalá pudiéramos hablar más entre nosotros.🌸",
+  "Llámame o mándame un mensaje cuando quieras hablar. Aquí estoy para ti🌼",
+  "Tú puedes con esto. Eres de las personas más fuertes que conozco, y esta etapa también pasará",
 
 ];
 
@@ -128,4 +128,5 @@ const startTop = cy + (Math.random() * 40 - 20); // small randomness
 }
 
 window.addEventListener('resize', ()=>{});
+
 
